@@ -77,7 +77,7 @@
 ### id
 ### name
 
-# training_lineup
+# training_lineupf
 ### id
 ### player_id
 ### training_id
@@ -92,7 +92,7 @@
 ### name
 
 # training
-### id
+### calendar_training_id
 ### name
 ### start_datetime
 ### length
@@ -142,7 +142,7 @@
 ### name
 
 # match
-### id
+### calendar_match_id
 ### league_id
 ### team_id
 ### date
@@ -153,7 +153,7 @@
 
 # match-match_events_list
 ### id
-### match_id
+### match_calendar_match_id
 ### match_event_list_id
 ### minute
 ### side
@@ -166,6 +166,12 @@
 
 # calendar
 ### id
+### name
+### date
+### time
+### match_id
+### training_id
+### calendar_event_list_id
 
 # team_stats
 ### team_id
