@@ -7,6 +7,7 @@
 ### firstname
 ### lastname
 ### email
+### is_email_verified
 ### password
 ### profile_pic
 ### telephone_number
@@ -28,15 +29,28 @@
 ### name
 ### sport_id
 
+
+# team_status
+### id
+### name
+
+
 # team
 ### id
 ### name
 ### short_name
 ### email
-### league_id
+### team_league_id
 ### city
 ### age_group_id
 ### sport_id
+### created_at
+### team_status_id
+
+# team_league
+### id
+### league_id
+### season
 
 # user-team-role
 ### id
@@ -44,6 +58,21 @@
 ### user_id
 ### team_id
 
+
+# invitation_status
+### id
+### name
+
+# team_invitations
+### id
+### team_id
+### invited_email
+### role_id
+### invited_by_user_id
+### invitation_status_id
+### created_at
+
+############## team_players
 # players
 ### id
 ### firstname
@@ -77,7 +106,7 @@
 ### id
 ### name
 
-# training_lineupf
+# training_lineup
 ### id
 ### player_id
 ### training_id
