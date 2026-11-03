@@ -83,7 +83,7 @@
 ### training_id
 ### appaered_status_id
 
-# training_status
+# event_status
 ### id
 ### name
 
@@ -98,18 +98,27 @@
 ### length
 ### end_datetime
 ### location
-### goal
 ### description
-### training_status_id
+### event_status_id
 ### training_type_id
+### training-exercise_dictionary_id
+
+# individual_trainings
+### id
+### name
+### description
+### player_id
+### training_type_id
+### training-exercise_dictionary_id
+
 
 # training-exercise_dictionary
 ### id
-### training_id
 ### excercise_dictionary_id
 ### is_excercise_finished
 ### length
 ### intensity
+
 
 # match_events_list
 ### id
@@ -139,7 +148,7 @@
 ### date
 ### description
 ### away_team
-### is_finished
+### event_status_id
 ### result_id
 
 # match-match_events_list
@@ -150,8 +159,6 @@
 ### side
 ### main_team_lineup_id
 ### secondary_team_lineup_id
-
-# eldöntendő kérdés: hogy a meccs és az edzés id rögzítsük-e a naptári esemény létrehozásakor és/vagy ezeket exportálni lehessen így a játékosoknak
 
 # calendar_event_list
 ### id
@@ -179,7 +186,8 @@
 ### yellow_card_count
 ### red_card_count
 ### training_appaerence
-### tension (training-exercise_dictionary.intensity, training-exercise_dictionary.length) kell az a képlet
+### physical_load
+
 
 
 
