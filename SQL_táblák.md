@@ -132,7 +132,7 @@
 ### intensity
 
 # training
-### calendar_training_id
+### id
 ### name
 ### start_datetime
 ### length
@@ -172,7 +172,7 @@
 ### name
 
 # match
-### calendar_match_id
+### id
 ### league_id
 ### team_id
 ### time
@@ -193,21 +193,55 @@
 ### match_event_list_id
 ### minute
 ### side
-### main_match_lineup_id
+### primary_match_lineup_id
 ### secondary_match_lineup_id
+
+# match_player_periods
+### id
+### event_time
+### match_events_list_id
+### match-match_events_list_id
+
 
 # calendar_event_list
 ### id
 ### name
 
+# team_special_events
+### id
+### name
+### description
+### date
+### team_id
+### location
+
+
 # calendar
 ### id
 ### name
-### date
-### time
+### year
+### month
 ### match_id
 ### training_id
+### team_special_events_id
 ### calendar_event_list_id
+
+# calendar_export
+### id
+### status
+### created_at
+
+# calendar_export_events
+### id
+### calendar_export_id
+### calendar_id
+
+# calendar_export_recipients
+### id 
+### calendar_export_id
+### team_players_id
+
+####################
 
 # team_stats
 ### team_id
