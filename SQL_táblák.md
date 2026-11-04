@@ -72,13 +72,12 @@
 ### invitation_status_id
 ### created_at
 
-############## team_players
 # players
 ### id
 ### firstname
 ### lastname
-### shirt_number
 ### team_id
+### shirt_number
 ### position_id
 ### birth_date
 ### profile_pic
@@ -106,7 +105,7 @@
 ### id
 ### name
 
-# training_lineup
+# training_attendance
 ### id
 ### player_id
 ### training_id
@@ -119,6 +118,14 @@
 # training_type
 ### id
 ### name
+
+# training-exercise_dictionary
+### id
+### excercise_dictionary_id
+### is_excercise_finished
+### order
+### length
+### intensity
 
 # training
 ### calendar_training_id
@@ -140,15 +147,6 @@
 ### training_type_id
 ### training-exercise_dictionary_id
 
-
-# training-exercise_dictionary
-### id
-### excercise_dictionary_id
-### is_excercise_finished
-### length
-### intensity
-
-
 # match_events_list
 ### id
 ### name
@@ -158,7 +156,7 @@
 ### name
 ### position_id
 
-# team_lineup
+# match_lineup
 ### id
 ### player_id
 ### match_id
@@ -186,8 +184,8 @@
 ### match_event_list_id
 ### minute
 ### side
-### main_team_lineup_id
-### secondary_team_lineup_id
+### main_match_lineup_id
+### secondary_match_lineup_id
 
 # calendar_event_list
 ### id
