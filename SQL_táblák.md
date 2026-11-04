@@ -76,13 +76,17 @@
 ### id
 ### firstname
 ### lastname
-### team_id
-### shirt_number
-### position_id
 ### birth_date
 ### profile_pic
 ### email
 ### telephone_number
+
+# team_player
+### id
+### team_id
+### player_id
+### position_id
+### shirt_number
 
 # exercise_tools
 ### id
@@ -107,7 +111,7 @@
 
 # training_attendance
 ### id
-### player_id
+### team_player_id
 ### training_id
 ### appaered_status_id
 
@@ -143,7 +147,7 @@
 ### id
 ### name
 ### description
-### player_id
+### team_player_id
 ### training_type_id
 ### training-exercise_dictionary_id
 
@@ -158,9 +162,8 @@
 
 # match_lineup
 ### id
-### player_id
+### team_player_id
 ### match_id
-### formation_id
 ### is_starter
 ### position_id
 
@@ -172,11 +175,17 @@
 ### calendar_match_id
 ### league_id
 ### team_id
+### time
 ### date
+### location
 ### description
 ### away_team
 ### event_status_id
 ### result_id
+### is_home
+### own_goal_count
+### opponent_goal_count
+### formation_id
 
 # match-match_events_list
 ### id
@@ -220,7 +229,3 @@
 ### red_card_count
 ### training_appaerence
 ### physical_load
-
-
-
-
