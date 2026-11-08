@@ -1,286 +1,291 @@
 |role|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |user|
 |:---:|
-|id|
-|firstname|
-|lastname|
-|email|
-|is_email_verified|
-|password|
+|id -- int -- primary|
+|firstname -- string|
+|lastname -- string|
+|email -- string -- unique|
+|is_email_verified -- bool|
+|password -- string|
 |profile_pic|
-|telephone_number|
+|telephone_number -- string -- unique|
 
 
 |leagues|
 |:---:|
-| id|
-|name|
+| id -- int -- primary|
+|name -- string -- unique|
 
 
 | age_group|
 |:---:|
-| id|
-| name|
+| id -- int -- primary|
+| name -- string -- unique|
 
 
 | sport|
 |:---:|
-| id|
-| name|
+| id -- int -- primary|
+| name -- string unique|
 
 
 | positions|
 |:---:|
-| id|
-| name|
-| sport_id|
+| id -- int -- primary|
+| name -- string -- unique|
+| sport_id -- int -- foreign|
 
 
 | team_status|
 |:---:|
-| id|
-| name|
+| id -- int -- primary|
+| name -- string -- unique|
+
+
+|team_league|
+|:---:|
+|id -- int -- primary|
+|league_id -- int -- foreign|
+|season -- int|
 
 
 |team|
 |:---:|
-|id|
-|name|
-|short_name|
-|email|
-|team_league_id|
-|city|
-|age_group_id|
-|sport_id|
-|created_at|
-|team_status_id|
+|id -- int -- primary|
+|name -- string|
+|short_name -- string|
+|email -- string -- unique|
+|team_league_id -- int -- foreign|
+|city -- string|
+|age_group_id -- int -- foreign|
+|sport_id -- int -- foreign|
+|created_at -- datetime|
+|team_status_id -- int- foreign|
 
-|team_league|
-|:---:|
-|id|
-|league_id|
-|season|
 
 |user-team-role|
 |:---:|
-|id|
-|role_id|
-|user_id|
-|team_id|
+|id -- int -- primary|
+|role_id -- int -- foreign|
+|user_id -- int -- foreign|
+|team_id -- int -- foreign|
 
 
 |invitation_status|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |team_invitations|
 |:---:|
-|id|
-|team_id|
-|invited_email|
-|role_id|
-|invited_by_user_id|
-|invitation_status_id|
-|created_at|
+|id -- int -- primary|
+|team_id -- int -- foreign|
+|invited_email -- string|
+|role_id -- int -- foreign|
+|invited_by_user_id -- int -- foreign|
+|invitation_status_id -- int -- foreign|
+|created_at -- datetime|
 
 |players|
 |:---:|
-|id|
+|id -- int -- primary|
 |firstname|
 |lastname|
-|birth_date|
+|birth_date -- datetime|
 |profile_pic|
-|email|
-|telephone_number|
+|email -- string -- unique|
+|telephone_number -- string -- unique|
 
 |team_player|
 |:---:|
-|id|
-|team_id|
-|player_id|
-|position_id|
-|shirt_number|
+|id -- int -- primary|
+|team_id -- int -- foreign|
+|player_id -- int -- foreign|
+|position_id -- int -- foreign|
+|shirt_number -- int -- unique|
 
 |exercise_tools|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |exercise_categories|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |exercise_dictionary|
 |:---:|
-|id|
-|name|
-|exercise_category_id|
-|description|
-|min_players|
-|exercise_tool_id|
-|field_size|
+|id -- int -- primary|
+|name -- string -- unique|
+|exercise_category_id -- int -- foreign|
+|description -- string|
+|min_players -- int|
+|exercise_tool_id -- int -- foreign|
+|field_size -- float|
 
 |appaered_status|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |training_attendance|
 |:---:|
-|id|
-|team_player_id|
-|training_id|
-|appaered_status_id|
+|id -- int -- primary|
+|team_player_id -- int -- foreign|
+|training_id -- int -- foreign|
+|appaered_status_id -- int -- foreign|
 
 |event_status|
 |:---:|
-|id|
-|name|
+|id -- int -- foreign|
+|name -- string -- unique|
 
 |training_type|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |training-exercise_dictionary|
 |:---:|
-|id|
-|excercise_dictionary_id|
-|is_excercise_finished|
-|order|
-|length|
-|intensity|
+|id -- int -- primary|
+|excercise_dictionary_id -- int -- foreign|
+|is_excercise_finished -- int -- foreign|
+|order -- int|
+|length -- int|
+|intensity -- int|
 
 |training|
 |:---:|
-|id|
-|name|
-|start_datetime|
-|length|
-|end_datetime|
-|location|
-|description|
-|event_status_id|
-|training_type_id|
-|training-exercise_dictionary_id|
+|id -- int -- primary|
+|name -- string|
+|start_datetime -- datetime|
+|length -- int|
+|end_datetime -- datetime|
+|location -- string|
+|description -- string|
+|event_status_id -- int -- foreign|
+|training_type_id -- int -- foreign|
+|training-exercise_dictionary_id -- int --  foreign|
 
 |individual_trainings|
 |:---:|
-|id|
-|name|
-|description|
-|team_player_id|
-|training_type_id|
-|training-exercise_dictionary_id|
+|id -- int -- primary|
+|name -- string|
+|description -- string|
+|team_player_id -- int -- foreign|
+|training_type_id -- int -- foreign|
+|training-exercise_dictionary_id -- int -- foreign|
 
 |match_event_list|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |formation|
 |:---:|
-|id|
-|name|
-|position_id|
+|id -- int -- primary|
+|name -- string|
+|position_id -- int -- foreign|
 
 |match_lineup|
 |:---:|
-|id|
-|team_player_id|
-|match_id|
-|is_starter|
-|position_id|
+|id -- int -- primary|
+|team_player_id -- int -- foreign|
+|match_id -- int --  foreign|
+|is_starter -- bool|
+|position_id -- int -- foreign|
 
 |result|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |match|
 |:---:|
-|id|
-|league_id|
-|team_id|
-|time|
-|date|
-|location|
-|description|
-|away_team|
-|event_status_id|
-|result_id|
-|is_home|
-|own_goal_count|
-|opponent_goal_count|
-|formation_id|
+|id -- int -- primary|
+|league_id -- int --  foreign|
+|team_id -- int --  foreign|
+|time -- time|
+|date -- date|
+|location -- string|
+|description -- string|
+|opponent_team -- string|
+|event_status_id -- int --  foreign|
+|result_id -- int --  foreign|
+|is_home -- bool|
+|own_goal_count -- int|
+|opponent_goal_count -- int|
+|formation_id -- int --  foreign|
 
 |match-match_event_list|
 |:---:|
-|id|
-|match_id|
-|match_event_list_id|
-|minute|
-|side|
-|primary_match_lineup_id|
-|secondary_match_lineup_id|
+|id -- int -- primary|
+|match_id -- int --  foreign|
+|match_event_list_id -- int --  foreign|
+|minute -- int|
+|side -- string|
+|primary_match_lineup_id -- int --  foreign|
+|secondary_match_lineup_id -- int --  foreign|
 
 |match_player_periods|
 |:---:|
-|id|
-|event_time|
-|match_event_list_id|
-|match-match_event_list_id|
+|id -- int -- primary|
+|event_time -- int|
+|match_event_list_id -- int --  foreign|
+|match-match_event_list_id -- int --  foreign|
 
 
 |calendar_event_list|
 |:---:|
-|id|
-|name|
+|id -- int -- primary|
+|name -- string -- unique|
 
 |team_special_events|
 |:---:|
-|id|
-|name|
-|description|
-|date|
-|team_id|
-|location|
+|id -- int -- primary|
+|name -- string -- unique|
+|description -- string|
+|date -- date|
+|team_id -- int --  foreign|
+|location -- string|
 
 
 |calendar|
 |:---:|
-|id|
-|name|
-|year|
-|month|
-|match_id|
-|training_id|
-|team_special_event_id|
-|calendar_event_list_id|
+|id -- int -- primary|
+|name -- string|
+|year -- int|
+|month -- int|
+|match_id -- int --  foreign|
+|training_id -- int --  foreign|
+|team_special_event_id -- int --  foreign|
+|calendar_event_list_id -- int --  foreign|
+
+---
+
 
 |calendar_export|
 |:---:|
-|id|
+|id -- int -- primary|
 |status|
-|created_at|
+|created_at -- datetime|
 
 |calendar_export_event|
 |:---:|
-|id|
-|calendar_export_id|
-|calendar_id|
+|id -- int -- primary|
+|calendar_export_id -- int --  foreign|
+|calendar_id -- int --  foreign|
 
 |calendar_export_recipients|
 |:---:|
-|id|
-|calendar_export_id|
-|team_players_id|
+|id -- int -- primary|
+|calendar_export_id -- int --  foreign|
+|team_players_id -- int --  foreign|
 
 ---
 
