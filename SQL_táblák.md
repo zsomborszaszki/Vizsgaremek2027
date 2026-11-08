@@ -179,7 +179,7 @@
 |training_type_id|
 |training-exercise_dictionary_id|
 
-|match_events_list|
+|match_event_list|
 |:---:|
 |id|
 |name|
@@ -220,10 +220,10 @@
 |opponent_goal_count|
 |formation_id|
 
-|match-match_events_list|
+|match-match_event_list|
 |:---:|
 |id|
-|match_calendar_match_id|
+|match_id|
 |match_event_list_id|
 |minute|
 |side|
@@ -234,8 +234,8 @@
 |:---:|
 |id|
 |event_time|
-|match_events_list_id|
-|match-match_events_list_id|
+|match_event_list_id|
+|match-match_event_list_id|
 
 
 |calendar_event_list|
@@ -261,7 +261,7 @@
 |month|
 |match_id|
 |training_id|
-|team_special_events_id|
+|team_special_event_id|
 |calendar_event_list_id|
 
 |calendar_export|
@@ -270,7 +270,7 @@
 |status|
 |created_at|
 
-|calendar_export_events|
+|calendar_export_event|
 |:---:|
 |id|
 |calendar_export_id|
