@@ -1,49 +1,49 @@
 |role|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |user|
 |:---:|
 |id -- int -- primary|
-|firstname -- string|
-|lastname -- string|
-|email -- string -- unique|
+|firstname -- varchar(255)|
+|lastname -- varchar(255)|
+|email -- varchar(255) -- unique|
 |is_email_verified -- bool|
-|password -- string|
+|password -- varchar(255)|
 |profile_pic|
-|telephone_number -- string -- unique|
+|telephone_number -- varchar(255) -- unique|
 
 
 |leagues|
 |:---:|
 | id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 
 | age_group|
 |:---:|
 | id -- int -- primary|
-| name -- string -- unique|
+| name -- varchar(255) -- unique|
 
 
 | sport|
 |:---:|
 | id -- int -- primary|
-| name -- string unique|
+| name -- varchar(255) unique|
 
 
 | positions|
 |:---:|
 | id -- int -- primary|
-| name -- string -- unique|
+| name -- varchar(255) -- unique|
 | sport_id -- int -- foreign|
 
 
 | team_status|
 |:---:|
 | id -- int -- primary|
-| name -- string -- unique|
+| name -- varchar(255) -- unique|
 
 
 |team_league|
@@ -56,11 +56,11 @@
 |team|
 |:---:|
 |id -- int -- primary|
-|name -- string|
-|short_name -- string|
-|email -- string -- unique|
+|name -- varchar(255)|
+|short_name -- varchar(255)|
+|email -- varchar(255) -- unique|
 |team_league_id -- int -- foreign|
-|city -- string|
+|city -- varchar(255)|
 |age_group_id -- int -- foreign|
 |sport_id -- int -- foreign|
 |created_at -- datetime|
@@ -78,13 +78,13 @@
 |invitation_status|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |team_invitations|
 |:---:|
 |id -- int -- primary|
 |team_id -- int -- foreign|
-|invited_email -- string|
+|invited_email -- varchar(255)|
 |role_id -- int -- foreign|
 |invited_by_user_id -- int -- foreign|
 |invitation_status_id -- int -- foreign|
@@ -93,12 +93,12 @@
 |players|
 |:---:|
 |id -- int -- primary|
-|firstname|
-|lastname|
+|firstname -- varchar(255)|
+|lastname -- varchar(255)|
 |birth_date -- datetime|
 |profile_pic|
-|email -- string -- unique|
-|telephone_number -- string -- unique|
+|email -- varchar(255) -- unique|
+|telephone_number -- varchar(255) -- unique|
 
 |team_player|
 |:---:|
@@ -111,19 +111,19 @@
 |exercise_tools|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |exercise_categories|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |exercise_dictionary|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 |exercise_category_id -- int -- foreign|
-|description -- string|
+|description -- varchar(255)|
 |min_players -- int|
 |exercise_tool_id -- int -- foreign|
 |field_size -- float|
@@ -131,7 +131,7 @@
 |appaered_status|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |training_attendance|
 |:---:|
@@ -143,12 +143,12 @@
 |event_status|
 |:---:|
 |id -- int -- foreign|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |training_type|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |training-exercise_dictionary|
 |:---:|
@@ -162,12 +162,12 @@
 |training|
 |:---:|
 |id -- int -- primary|
-|name -- string|
+|name -- varchar(255)|
 |start_datetime -- datetime|
 |length -- int|
 |end_datetime -- datetime|
-|location -- string|
-|description -- string|
+|location -- varchar(255)|
+|description -- varchar(255)|
 |event_status_id -- int -- foreign|
 |training_type_id -- int -- foreign|
 |training-exercise_dictionary_id -- int --  foreign|
@@ -175,8 +175,8 @@
 |individual_trainings|
 |:---:|
 |id -- int -- primary|
-|name -- string|
-|description -- string|
+|name -- varchar(255)|
+|description -- varchar(255)|
 |team_player_id -- int -- foreign|
 |training_type_id -- int -- foreign|
 |training-exercise_dictionary_id -- int -- foreign|
@@ -184,12 +184,12 @@
 |match_event_list|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |formation|
 |:---:|
 |id -- int -- primary|
-|name -- string|
+|name -- varchar(255)|
 |position_id -- int -- foreign|
 
 |match_lineup|
@@ -203,7 +203,7 @@
 |result|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |match|
 |:---:|
@@ -212,9 +212,9 @@
 |team_id -- int --  foreign|
 |time -- time|
 |date -- date|
-|location -- string|
-|description -- string|
-|opponent_team -- string|
+|location -- varchar(255)|
+|description -- varchar(255)|
+|opponent_team -- varchar(255)|
 |event_status_id -- int --  foreign|
 |result_id -- int --  foreign|
 |is_home -- bool|
@@ -228,7 +228,7 @@
 |match_id -- int --  foreign|
 |match_event_list_id -- int --  foreign|
 |minute -- int|
-|side -- string|
+|side -- varchar(255)|
 |primary_match_lineup_id -- int --  foreign|
 |secondary_match_lineup_id -- int --  foreign|
 
@@ -243,22 +243,22 @@
 |calendar_event_list|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
+|name -- varchar(255) -- unique|
 
 |team_special_events|
 |:---:|
 |id -- int -- primary|
-|name -- string -- unique|
-|description -- string|
+|name -- varchar(255) -- unique|
+|description -- varchar(255)|
 |date -- date|
 |team_id -- int --  foreign|
-|location -- string|
+|location -- varchar(255)|
 
 
 |calendar|
 |:---:|
 |id -- int -- primary|
-|name -- string|
+|name -- varchar(255)|
 |year -- int|
 |month -- int|
 |match_id -- int --  foreign|
