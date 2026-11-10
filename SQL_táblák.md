@@ -46,25 +46,25 @@
 | name -- varchar(255) -- unique|
 
 
-|team_league|
-|:---:|
-|id -- int -- primary|
-|league_id -- int -- foreign|
-|season -- int|
-
-
 |team|
 |:---:|
 |id -- int -- primary|
 |name -- varchar(255)|
 |short_name -- varchar(255)|
 |email -- varchar(255) -- unique|
-|team_league_id -- int -- foreign|
 |city -- varchar(255)|
 |age_group_id -- int -- foreign|
 |sport_id -- int -- foreign|
 |created_at -- datetime|
 |team_status_id -- int- foreign|
+
+
+|team_league|
+|:---:|
+|id -- int -- primary|
+|league_id -- int -- foreign|
+|season -- int|
+|team_id -- int -- foreign|
 
 
 |user-team-role|
@@ -151,12 +151,6 @@
 |id -- int -- primary|
 |name -- varchar(255) -- unique|
 
-|training_attendance|
-|:---:|
-|id -- int -- primary|
-|team_player_id -- int -- foreign|
-|training_id -- int -- foreign|
-|appaered_status_id -- int -- foreign|
 
 |event_status|
 |:---:|
@@ -179,6 +173,15 @@
 |description -- varchar(255)|
 |event_status_id -- int -- foreign|
 |training_type_id -- int -- foreign|
+
+
+|training_attendance|
+|:---:|
+|id -- int -- primary|
+|team_player_id -- int -- foreign|
+|training_id -- int -- foreign|
+|appaered_status_id -- int -- foreign|
+
 
 |training-exercise|
 |:---:|
@@ -213,13 +216,6 @@
 |name -- varchar(255)|
 |position_id -- int -- foreign|
 
-|match_lineup|
-|:---:|
-|id -- int -- primary|
-|team_player_id -- int -- foreign|
-|match_id -- int --  foreign|
-|is_starter -- bool|
-|position_id -- int -- foreign|
 
 |result|
 |:---:|
@@ -242,6 +238,16 @@
 |own_goal_count -- int|
 |opponent_goal_count -- int|
 |formation_id -- int --  foreign|
+
+
+|match_lineup|
+|:---:|
+|id -- int -- primary|
+|team_player_id -- int -- foreign|
+|match_id -- int --  foreign|
+|is_starter -- bool|
+|position_id -- int -- foreign|
+
 
 |match-match_event_list|
 |:---:|
