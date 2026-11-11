@@ -61,10 +61,10 @@
 |team_status_id -- int- foreign|
 
 
-|team_league|
+|team_leagues|
 |:---:|
 |id -- int -- primary|
-|league_id -- int -- foreign -- unique|
+|leagues_id -- int -- foreign -- unique|
 |season -- int -- unique|
 |team_id -- int -- foreign -- unique|
 
@@ -103,12 +103,12 @@
 |email -- varchar(255) -- unique|
 |telephone_number -- varchar(255) -- unique|
 
-|team_player|
+|team_players|
 |:---:|
 |id -- int -- primary|
 |team_id -- int -- foreign -- unique|
-|player_id -- int -- foreign -- unique|
-|position_id -- int -- foreign|
+|players_id -- int -- foreign -- unique|
+|positions_id -- int -- foreign|
 |shirt_number -- int -- unique|
 
 |exercise_tools|
@@ -125,7 +125,7 @@
 |:---:|
 |id -- int -- primary|
 |name -- varchar(255) -- unique|
-|exercise_category_id -- int -- foreign|
+|exercise_categories_id -- int -- foreign|
 |description -- varchar(255)|
 |min_players -- int|
 |field_size -- float|
@@ -135,7 +135,7 @@
 |:---:|
 |id -- int -- primary|
 |excercise_dictionary_id -- int -- foreign|
-|excercise_tool_id -- int -- foreign|
+|exercise_tools_id -- int -- foreign|
 |description -- varchar(255)|
 |repetition -- int|
 |sets -- int|
@@ -182,7 +182,7 @@
 |training_attendance|
 |:---:|
 |id -- int -- primary|
-|team_player_id -- int -- foreign -- unique|
+|team_players_id -- int -- foreign -- unique|
 |training_id -- int -- foreign -- unique|
 |appaered_status_id -- int -- foreign|
 
@@ -195,7 +195,7 @@
 |token_hash -- varchar(255) -- unique| 
 |note -- varchar(255)|
 |status -- varchar(255)|
-|team_player_id -- int -- foreign|
+|team_players_id -- int -- foreign|
 |training_type_id -- int -- foreign|
 |created_at -- datetime -- DATE_FORMAT(YYYY--MM-DD)|
 |deadline -- datetime -- DATE_FORMAT(YYYY-MM-DD-HH:MM)|
@@ -207,7 +207,7 @@
 |excercise_id -- int -- foreign|
 |is_excercise_finished -- bool|
 |training_id -- int -- foreign|
-|individual_training_id -- int -- foreign|
+|individual_trainings_id -- int -- foreign|
 |order -- int|
 
 
@@ -223,11 +223,11 @@
 |name -- varchar(255)|
 
 
-|formation_position|
+|formation_positions|
 |:---:|
 |id -- int -- primary|
 |formation_id -- int -- foreign -- unique|
-|position_id -- int -- foreign -- unique|
+|positions_id -- int -- foreign -- unique|
 
 
 |result|
@@ -239,7 +239,7 @@
 |match|
 |:---:|
 |id -- int -- primary|
-|team_league_id -- int --  foreign|
+|team_leagues_id -- int --  foreign|
 |team_id -- int --  foreign|
 |time -- time|
 |date -- date|
@@ -257,10 +257,10 @@
 |match_lineup|
 |:---:|
 |id -- int -- primary|
-|team_player_id -- int -- foreign -- unique|
+|team_players_id -- int -- foreign -- unique|
 |match_id -- int --  foreign -- unique|
 |is_starter -- bool|
-|formation_position_id -- int -- foreign -- unique|
+|formation_positions_id -- int -- foreign -- unique|
 
 
 |match-match_event_list|
@@ -273,7 +273,7 @@
 |primary_match_lineup_id -- int --  foreign|
 |secondary_match_lineup_id -- int --  foreign|
 
-|match_player_periods|
+|match_players_periods|
 |:---:|
 |id -- int -- primary|
 |event_time -- int|
@@ -303,7 +303,7 @@
 |date -- datetime -- DATE_FORMAT(YYYY-MM) -- unique|
 |match_id -- int --  foreign -- unique|
 |training_id -- int --  foreign -- unique|
-|team_special_event_id -- int --  foreign -- unique|
+|team_special_events_id -- int --  foreign -- unique|
 |calendar_event_list_id -- int --  foreign -- unique|
 
 
@@ -324,7 +324,7 @@
 |:---:|
 |id -- int -- primary|
 |calendar_export_id -- int --  foreign|
-|team_player_id -- int --  foreign|
+|team_players_id -- int --  foreign|
 
 |team_monthly_stats|
 |:---:|
@@ -340,10 +340,10 @@
 |training_count|
 |training_avg_appaerence|
 
-|player_monthly_stats|
+|players_monthly_stats|
 |:---:|
 |id -- int -- primary|
-|team_player_id -- int -- foreign -- unique|
+|team_players_id -- int -- foreign -- unique|
 |date -- datetime -- DATE_FORMAT(yyyy-mm) -- unique|
 |match_played_count|
 |played_minutes|
