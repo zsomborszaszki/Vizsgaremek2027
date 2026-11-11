@@ -98,7 +98,7 @@
 |id -- int -- primary|
 |firstname -- varchar(255)|
 |lastname -- varchar(255)|
-|birth_date -- datetime|
+|birth_date -- date|
 |profile_pic -- varchar(500)|
 |email -- varchar(255) -- unique|
 |telephone_number -- varchar(255) -- unique|
