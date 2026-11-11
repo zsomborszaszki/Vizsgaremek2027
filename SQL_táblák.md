@@ -17,6 +17,16 @@
 |telephone_number -- varchar(255) -- unique|
 
 
+|user_sessions|
+|:---:|
+|id -- int -- primary|
+|user_id -- int -- foreign|
+|refresh_token_hash -- varchar(255) -- unique|
+|created_at -- datetime -- DATE_FORMAT(yyyy-mm-dd-hh:mm)|
+|expires_at -- datetime -- DATE_FORMAT(yyyy-mm-dd-hh:mm)|
+|revoked_at -- datetime -- DATE_FORMAT(yyyy-mm-dd-hh:mm)|
+|last_used -- datetime -- DATE_FORMAT(yyyy-mm-dd-hh:mm)|
+
 |leagues|
 |:---:|
 | id -- int -- primary|
