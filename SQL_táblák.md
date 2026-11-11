@@ -65,7 +65,7 @@
 |:---:|
 |id -- int -- primary|
 |leagues_id -- int -- foreign -- unique|
-|season -- int -- unique|
+|season -- varchar(255) -- unique|
 |team_id -- int -- foreign -- unique|
 
 
