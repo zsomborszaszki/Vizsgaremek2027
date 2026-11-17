@@ -230,7 +230,7 @@
 |formation|
 |:---:|
 |id -- int -- primary|
-|name -- varchar(255)|
+|name -- varchar(255) -- unique|
 
 
 |formation_positions|
