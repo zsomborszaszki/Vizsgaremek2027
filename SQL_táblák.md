@@ -316,12 +316,15 @@
 |team_special_events_id -- int --  foreign -- unique|
 |calendar_event_list_id -- int --  foreign -- unique|
 
-
+|calendar_status|
+|:---:|
+|id -- int -- primary|
+|name -- varchar(255) -- unique|
 
 |calendar_export|
 |:---:|
 |id -- int -- primary|
-|status varchar(255) |
+|calendar_status_id -- int -- foreign|
 |created_at -- datetime|
 
 |calendar_export_event|
